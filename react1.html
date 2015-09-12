@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>My first react app</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    </head>
+    <script type="text/jsx">
+        /*** @jsx React.DOM*/
+        var APP = React.createClass({
+            propTypes:{
+                txt:React.propTypes.String,
+                cat:React.propTypes.number.isRequired
+            }
+            render:function(){
+                return (
+                <div>
+                    <h1>{this.props.txt}</h1>
+                </div>
+                )
+            }
+        });
+        React.render(<APP txt="Hi iam Murali" />,document.body);
+    </script>
+    <body>
+    </body>
+</html>
+
