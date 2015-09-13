@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>My first react app</title>
+        <script type="text/javascript" src="./react.js"></script>
+        <script type="text/javascript" src="./JSXTransformer.js"></script>
+    </head>
+    <script type="text/jsx">
+        /*** @jsx React.DOM*/
+        var APP = React.createClass({
+            propTypes:{
+                txt:React.PropTypes.string,
+                //this is a comment
+                cat:React.PropTypes.number.isRequired
+                //cat:React.PropTypes.number.isRequired
+            },
+            render:function(){
+                console.log("Properties can be accessed outside by just using this.props.cat ");
+                console.log("Prop values are ");
+                console.log(this.props.cat);
+                console.log(this.props.txt);
+                return (
+                <div>
+                    <h1>{this.props.txt}</h1>
+                    <h1>This is cat value : {this.props.cat}</h1>
+                </div>
+                )
+            }
+        });
+        React.render(<APP cat={5} txt="Hi iam Murali" />,document.body);
+    </script>
+    <body>
+    </body>
+</html>
+
