@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Using child properties</title>
+        <script src="./react.js"></script>
+        <script src="./JSXTransformer.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+    <script type="text/jsx">
+        /*** @jsx React.DOM*/
+        var App = React.createClass({ 
+            render:function(){
+                return(
+                    <div>
+                        <BButton className="btn-primary">I <BHeart/> React</BButton>
+                        <BButton className="btn-primary">I <BHeart/> React</BButton>
+                        <BButton className="btn-primary">I <BHeart/> React</BButton>
+                    </div>
+                )
+            }
+        });
+        
+        var BButton = React.createClass({
+            render:function(){
+                return <a className="btn" {...this.props}>{this.props.children}</a>
+            }
+        });
+        
+        var BHeart = React.createClass({
+            render:function(){
+                return <span className="glyphicon glyphicon-heart"></span>
+            }
+        });
+        
+        React.render(<App/>,document.body);
+    </script>
+    <body>
+    </body>
+</html>

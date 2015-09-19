@@ -9,6 +9,13 @@
     <script type="text/jsx">
         /*** @jsx React.DOM*/
         var APP = React.createClass({
+            //we can set default values for the properties by following function
+            getDefaultProps:function(){
+                return {
+                    txt:"I am default text",
+                    cat:10
+                }
+            },
             propTypes:{
                 txt:React.PropTypes.string,
                 //this is a comment
